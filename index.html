@@ -4,15 +4,12 @@
     <meta charset="UTF-8">
 
     <!-- 
-      RESTORED VIEWPORT TAG:
-      - We are reverting to the standard responsive viewport.
-      - 'width=device-width' makes the page width match the screen width of the device.
-      - 'initial-scale=1.0' sets the initial zoom level to 100%.
-      - This will produce the mobile-friendly layout shown in your screenshot.
+      VIEWPORT SET TO DEVICE-WIDTH:
+      This ensures the page loads at 100% zoom level without being scaled down.
     -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Detail Dokumen Elektronik</title>
+    <title>Detail Dokumen Elektronik (Tampilan Desktop)</title>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter -->
@@ -23,6 +20,8 @@
         /* Apply Inter font to the body */
         body {
             font-family: 'Inter', sans-serif;
+            /* Allow horizontal scrolling */
+            overflow-x: auto;
         }
         /* Simple animation for the card */
         .fade-in {
@@ -40,92 +39,96 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+<body class="bg-gray-100">
 
     <!-- 
-      The layout now uses Tailwind's responsive prefixes (like `sm:`) to adapt.
-      On small screens (mobile), flex direction will be column.
-      On larger screens ('sm' and up), it will switch to row.
+      The main container is centered vertically and has padding.
+      The width is fixed, which will cause horizontal overflow on small screens.
     -->
-    <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg overflow-hidden fade-in">
-        
-        <!-- Header Section -->
-        <header class="bg-teal-600 text-white p-6">
-            <div class="flex items-center space-x-4">
-                <!-- Icon -->
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <!-- Title -->
-                <div>
-                    <h1 class="text-2xl font-bold">Dokumen Terverifikasi</h1>
-                    <p class="text-sm text-teal-100">Detail Tanda Tangan Elektronik</p>
-                </div>
-            </div>
-        </header>
-
-        <!-- Content Section -->
-        <main class="p-6 md:p-8">
-            <div class="space-y-5">
-                <!-- Each data item will stack vertically on mobile and be in a row on desktop -->
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">Jenis Dokumen</p>
-                    <p class="w-full sm:w-2/3 text-gray-800 font-semibold">Surat Keterangan Dokter</p>
-                </div>
-                <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">ID Dokumen</p>
-                    <p class="w-full sm:w-2/3 text-gray-800 font-mono text-sm break-all">KC-ne8g3-kfnB7hevc9oH5dCja42gf7H</p>
-                </div>
-                <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">No. Surat</p>
-                    <p class="w-full sm:w-2/3 text-gray-800">158/SKD/07/2025</p>
-                </div>
-                <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">Tanggal Surat</p>
-                    <p class="w-full sm:w-2/3 text-gray-800">29 Juli 2025</p>
-                </div>
-                <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">Dibuat Di</p>
-                    <div class="w-full sm:w-2/3 text-gray-800">
-                        <p class="font-semibold">KLINIK PRATAMA ARSINA</p>
-                        <p class="text-sm text-gray-600">Jl. Kol. Sunandar No.33, Rendole Indah, Muktiharjo, Kec. Margorejo, Kabupaten Pati, Jawa Tengah 59163</p>
+    <div class="flex items-center justify-start min-h-screen p-4">
+        <div class="w-[672px] max-w-none bg-white rounded-xl shadow-lg overflow-hidden fade-in">
+            
+            <!-- Header Section -->
+            <header class="bg-teal-600 text-white p-6">
+                <div class="flex items-center space-x-4">
+                    <!-- Icon -->
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <!-- Title -->
+                    <div>
+                        <h1 class="text-2xl font-bold">Dokumen Terverifikasi</h1>
+                        <p class="text-sm text-teal-100">Detail Tanda Tangan Elektronik</p>
                     </div>
                 </div>
-                <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">Dibuat Pada</p>
-                    <p class="w-full sm:w-2/3 text-gray-800">29-07-2025 09:35:01</p>
+            </header>
+
+            <!-- 
+              Content Section
+              - 'flex-row' is now used without 'sm:' prefix to force side-by-side layout on all screen sizes.
+              - 'flex-shrink-0' is added to the label column to prevent it from shrinking.
+            -->
+            <main class="p-6 md:p-8">
+                <div class="space-y-5">
+                    <div class="flex flex-row items-start">
+                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">Jenis Dokumen</p>
+                        <p class="w-2/3 text-gray-800 font-semibold">Surat Keterangan Dokter</p>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-start">
+                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">ID Dokumen</p>
+                        <p class="w-2/3 text-gray-800 font-mono text-sm break-all">KC-ne8g3-kfnB7hevc9oH5dCja42gf7H</p>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-start">
+                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">No. Surat</p>
+                        <p class="w-2/3 text-gray-800">158/SKD/07/2025</p>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-start">
+                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">Tanggal Surat</p>
+                        <p class="w-2/3 text-gray-800">29 Juli 2025</p>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-start">
+                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">Dibuat Di</p>
+                        <div class="w-2/3 text-gray-800">
+                            <p class="font-semibold">KLINIK PRATAMA ARSINA</p>
+                            <p class="text-sm text-gray-600">Jl. Kol. Sunandar No.33, Rendole Indah, Muktiharjo, Kec. Margorejo, Kabupaten Pati, Jawa Tengah 59163</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-start">
+                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">Dibuat Pada</p>
+                        <p class="w-2/3 text-gray-800">29-07-2025 09:35:01</p>
+                    </div>
                 </div>
+            </main>
+
+            <!-- Signer Information Section -->
+            <div class="bg-gray-50 p-6 md:p-8 border-t border-gray-200">
+                 <h2 class="text-lg font-bold text-teal-700 mb-4">Informasi Penanda Tangan</h2>
+                 <div class="space-y-4">
+                    <div class="flex flex-row items-start">
+                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">Nama</p>
+                        <p class="w-2/3 text-gray-800 font-semibold">dr. Riana</p>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-start">
+                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">No. Identitas (SIP)</p>
+                        <p class="w-2/3 text-gray-800">DPMPTSP/331804.59181/DU/03/449/034/III/2025</p>
+                    </div>
+                 </div>
             </div>
-        </main>
+            
+            <!-- Footer -->
+            <footer class="text-center p-4 bg-white text-xs text-gray-500 border-t">
+                <p>&copy; 2025 Sistem Verifikasi Dokumen. All rights reserved.</p>
+            </footer>
 
-        <!-- Signer Information Section -->
-        <div class="bg-gray-50 p-6 md:p-8 border-t border-gray-200">
-             <h2 class="text-lg font-bold text-teal-700 mb-4">Informasi Penanda Tangan</h2>
-             <div class="space-y-4">
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">Nama</p>
-                    <p class="w-full sm:w-2/3 text-gray-800 font-semibold">dr. Riana</p>
-                </div>
-                <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">No. Identitas (SIP)</p>
-                    <p class="w-full sm:w-2/3 text-gray-800">DPMPTSP/331804.59181/DU/03/449/034/III/2025</p>
-                </div>
-             </div>
         </div>
-        
-        <!-- Footer -->
-        <footer class="text-center p-4 bg-gray-100 text-xs text-gray-500">
-            <p>&copy; 2025 Sistem Verifikasi Dokumen. All rights reserved.</p>
-        </footer>
-
     </div>
 
 </body>
