@@ -2,8 +2,17 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Dokumen Elektronik</title>
+    
+    <!-- 
+      MODIFIED VIEWPORT TAG:
+      - We set a fixed width (e.g., 1024px) to force the browser to render the page as if it were on a desktop.
+      - This makes the mobile browser zoom out initially to fit the entire page width.
+      - Users can then freely zoom in and out.
+      - This replaces the original responsive tag: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    -->
+    <meta name="viewport" content="width=1024">
+
+    <title>Detail Dokumen Elektronik (Versi Desktop)</title>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter -->
@@ -14,6 +23,8 @@
         /* Apply Inter font to the body */
         body {
             font-family: 'Inter', sans-serif;
+            /* Ensure the background covers the entire viewport even when zoomed out */
+            min-height: 100vh;
         }
         /* Simple animation for the card */
         .fade-in {
@@ -31,9 +42,12 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center min-h-screen p-4 sm:p-6 lg:p-8">
+<body class="bg-gray-100 flex items-center justify-center p-4 sm:p-6 lg:p-8">
 
-    <!-- Main container for the document details -->
+    <!-- 
+      The content remains the same, but the viewport change will affect how it's displayed on mobile.
+      The layout will not collapse and will behave like the desktop version.
+    -->
     <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg overflow-hidden fade-in">
         
         <!-- Header Section -->
