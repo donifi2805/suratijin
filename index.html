@@ -11,42 +11,23 @@
 
     <title>Detail Dokumen Elektronik</title>
     
-    <!-- 
-      IKON APLIKASI (PWA & FAVICON):
-      - Ikon ini akan muncul di tab browser, bookmark, dan saat ditambahkan ke layar utama.
-      - `rel="icon"` adalah untuk favicon standar.
-      - `rel="apple-touch-icon"` adalah untuk perangkat iOS (iPhone/iPad).
-    -->
+    <!-- Ikon Aplikasi (PWA & Favicon) -->
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAA/1BMVEX////4/v/T6fdntOUAktwAjd4AjeI6oOSQw+7R5vjr9vxQqeEAhdsAlOV6wfCr2Pe03Pmo0vaAuu0AgNwAetYyktrc6/m52/QAmurz+f6pzO4AdNcAi+Z4wvgAc9uz0/KIyfdyreaW0M1Yvbi+3tj/9/PZ5N+YzMRzxcOLztIyjttDoN/P6ekApaP5/Px3xtEAZ8pfn+EAfdTI5ejk8Oml3N2RvOwAadXG5doArXwrspXw9v2v3eoGrpVDgt9Yleiq1e13wOEAo5Jrs9eFud9Km85smOMAgcgAcMRTlNxbmdUAW85+r+qtxO/I1vGetuV9oeAAYMoAT8hlitgATdLMfTOeAAABUklEQVR4AYzPg5oDMQBF4bO2d1OubdQ2U7fv/yybZGr/M+H9Ipa3wgyra+sbG5ubW9s7jNvd2z84PDo+Od06O78QjLBt2o+xOJwbLhtDDt2XDDm9uqbvyH3DiNurHbpWrXV39w+PT88vrw7gzaVr7X0T+Pi8/4Cvr93Xb0D8/GKIvxPA8wV4deVD8QcEmnN/RYdAMBT2wgNKJOBHe39HiXq+VBaLdVcST6Dtn6IkU2pl+lMty+yiJOJof9so2TX0fYBcFiV/ZYV+lNstugpDYXfb0/MIhijahra9KKGIn1uMchHNlUfzu8wap6xEYOf35xpFyCrazpUfrRYIuFyB7vvqMoJRcmE4Glcup8BoNrBEmr9YGgEseWuhVpMJZ9UskYkvk7Vq9P0G4ldSp7WWzNfzslVnwCGrkVYVRbSbMpDfYVgj0JBVZnDIToDZBP8jEQAAns0rz6moqnUAAAAASUVORK5CYII=">
     <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAA/1BMVEX////4/v/T6fdntOUAktwAjd4AjeI6oOSQw+7R5vjr9vxQqeEAhdsAlOV6wfCr2Pe03Pmo0vaAuu0AgNwAetYyktrc6/m52/QAmurz+f6pzO4AdNcAi+Z4wvgAc9uz0/KIyfdyreaW0M1Yvbi+3tj/9/PZ5N+YzMRzxcOLztIyjttDoN/P6ekApaP5/Px3xtEAZ8pfn+EAfdTI5ejk8Oml3N2RvOwAadXG5doArXwrspXw9v2v3eoGrpVDgt9Yleiq1e13wOEAo5Jrs9eFud9Km85smOMAgcgAcMRTlNxbmdUAW85+r+qtxO/I1vGetuV9oeAAYMoAT8hlitgATdLMfTOeAAABUklEQVR4AYzPg5oDMQBF4bO2d1OubdQ2U7fv/yybZGr/M+H9Ipa3wgyra+sbG5ubW9s7jNvd2z84PDo+Od06O78QjLBt2o+xOJwbLhtDDt2XDDm9uqbvyH3DiNurHbpWrXV39w+PT88vrw7gzaVr7X0T+Pi8/4Cvr93Xb0D8/GKIvxPA8wV4deVD8QcEmnN/RYdAMBT2wgNKJOBHe39HiXq+VBaLdVcST6Dtn6IkU2pl+lMty+yiJOJof9so2TX0fYBcFiV/ZYV+lNstugpDYXfb0/MIhijahra9KKGIn1uMchHNlUfzu8wap6xEYOf35xpFyCrazpUfrRYIuFyB7vvqMoJRcmE4Glcup8BoNrBEmr9YGgEseWuhVpMJZ9UskYkvk7Vq9P0G4ldSp7WWzNfzslVnwCGrkVYVRbSbMpDfYVgj0JBVZnDIToDZBP8jEQAAns0rz6moqnUAAAAASUVORK5CYII=">
     <meta name="application-name" content="Profaskes">
     <meta name="apple-mobile-web-app-title" content="Profaskes">
 
-    <!-- Tailwind CSS untuk styling -->
+    <!-- Tailwind CSS & Google Fonts -->
     <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Menerapkan font Inter ke body */
-        body {
-            font-family: 'Inter', sans-serif;
-            min-height: 100vh;
-        }
-        /* Animasi sederhana untuk kartu */
-        .fade-in {
-            animation: fadeIn 0.5s ease-in-out;
-        }
+        body { font-family: 'Inter', sans-serif; min-height: 100vh; }
+        .fade-in { animation: fadeIn 0.5s ease-in-out; }
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(-10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
     </style>
 </head>
@@ -58,86 +39,129 @@
              onerror="this.onerror=null;this.src='https://placehold.co/200x50/eeeeee/333333?text=Logo';">
     </div>
 
-    <!-- Kartu Dokumen -->
-    <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg overflow-hidden fade-in">
+    <!-- Kontainer Utama Kartu -->
+    <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg overflow-hidden">
         
-        <!-- Bagian Header -->
-        <header class="bg-teal-600 text-white p-6">
-            <div class="flex items-center space-x-4">
-                <!-- Ikon -->
-                <div>
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                    </svg>
-                </div>
-                <!-- Judul -->
-                <div>
-                    <h1 class="text-2xl font-bold">Dokumen Terverifikasi</h1>
-                    <p class="text-sm text-teal-100">Detail Tanda Tangan Elektronik</p>
-                </div>
-            </div>
-        </header>
-
-        <!-- Bagian Konten -->
-        <main class="p-6 md:p-8">
-            <div class="space-y-5">
-                <div class="flex flex-row">
-                    <p class="w-1/3 text-gray-500 font-medium">Jenis Dokumen</p>
-                    <p class="w-2/3 text-gray-800 font-semibold">Surat Keterangan Dokter</p>
-                </div>
-                <hr>
-                <div class="flex flex-row">
-                    <p class="w-1/3 text-gray-500 font-medium">ID Dokumen</p>
-                    <p class="w-2/3 text-gray-800 font-mono text-sm break-all">KC-ne8g3-kfnB7hevc9oH5dCja42gf7H</p>
-                </div>
-                <hr>
-                <div class="flex flex-row">
-                    <p class="w-1/3 text-gray-500 font-medium">No. Surat</p>
-                    <p class="w-2/3 text-gray-800">158/SKD/07/2025</p>
-                </div>
-                <hr>
-                <div class="flex flex-row">
-                    <p class="w-1/3 text-gray-500 font-medium">Tanggal Surat</p>
-                    <p class="w-2/3 text-gray-800">29 Juli 2025</p>
-                </div>
-                <hr>
-                <div class="flex flex-row">
-                    <p class="w-1/3 text-gray-500 font-medium">Dibuat Di</p>
-                    <div class="w-2/3 text-gray-800">
-                        <p class="font-semibold">KLINIK PRATAMA ASRINA</p>
-                        <p class="text-sm text-gray-600">Jl. Kol. Sunandar No.33, Rendole Indah, Muktiharjo, Kec. Margorejo, Kabupaten Pati, Jawa Tengah 59163</p>
+        <!-- Tampilan Detail Dokumen -->
+        <div id="document-details" class="fade-in">
+            <!-- Header -->
+            <header class="bg-teal-600 text-white p-6">
+                <div class="flex items-center space-x-4">
+                    <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                        </svg>
+                    </div>
+                    <div>
+                        <h1 class="text-2xl font-bold">Dokumen Terverifikasi</h1>
+                        <p class="text-sm text-teal-100">Detail Tanda Tangan Elektronik</p>
                     </div>
                 </div>
-                <hr>
-                <div class="flex flex-row">
-                    <p class="w-1/3 text-gray-500 font-medium">Dibuat Pada</p>
-                    <p class="w-2/3 text-gray-800">29-07-2025 09:35:01</p>
+            </header>
+
+            <!-- Konten Utama -->
+            <main class="p-6 md:p-8">
+                <div class="space-y-5">
+                    <div class="flex flex-row items-center">
+                        <p class="w-1/3 text-gray-500 font-medium">Jenis Dokumen</p>
+                        <p class="w-2/3 text-gray-800 font-semibold">Surat Keterangan Dokter</p>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-center">
+                        <p class="w-1/3 text-gray-500 font-medium">ID Dokumen</p>
+                        <p class="w-2/3 text-gray-800 font-mono text-sm break-all">KC-ne8g3-kfnB7hevc9oH5dCja42gf7H</p>
+                    </div>
+                    <hr>
+                    <!-- Baris dengan Tombol "Lihat Dokumen" -->
+                    <div class="flex flex-row items-center">
+                        <p class="w-1/3 text-gray-500 font-medium">No. Surat</p>
+                        <div class="w-2/3 flex justify-between items-center">
+                            <p class="text-gray-800">158/SKD/07/2025</p>
+                            <button id="view-document-btn" class="bg-teal-100 text-teal-800 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center space-x-2 hover:bg-teal-200 transition-colors">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                                </svg>
+                                <span>Lihat Dokumen</span>
+                            </button>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-center">
+                        <p class="w-1/3 text-gray-500 font-medium">Tanggal Surat</p>
+                        <p class="w-2/3 text-gray-800">29 Juli 2025</p>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-center">
+                        <p class="w-1/3 text-gray-500 font-medium">Dibuat Di</p>
+                        <div class="w-2/3 text-gray-800">
+                            <p class="font-semibold">KLINIK PRATAMA ASRINA</p>
+                            <p class="text-sm text-gray-600">Jl. Kol. Sunandar No.33, Rendole Indah, Muktiharjo, Kec. Margorejo, Kabupaten Pati, Jawa Tengah 59163</p>
+                        </div>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-center">
+                        <p class="w-1/3 text-gray-500 font-medium">Dibuat Pada</p>
+                        <p class="w-2/3 text-gray-800">29-07-2025 09:35:01</p>
+                    </div>
                 </div>
+            </main>
+
+            <!-- Info Penanda Tangan -->
+            <div class="bg-gray-50 p-6 md:p-8 border-t border-gray-200">
+                 <h2 class="text-lg font-bold text-teal-700 mb-4">Informasi Penanda Tangan</h2>
+                 <div class="space-y-4">
+                    <div class="flex flex-row items-center">
+                        <p class="w-1/3 text-gray-500 font-medium">Nama</p>
+                        <p class="w-2/3 text-gray-800 font-semibold">dr. Riana</p>
+                    </div>
+                    <hr>
+                    <div class="flex flex-row items-center">
+                        <p class="w-1/3 text-gray-500 font-medium">No. Identitas (SIP)</p>
+                        <p class="w-2/3 text-gray-800">DPMPTSP/331804.59181/DU/03/449/034/III/2025</p>
+                    </div>
+                 </div>
             </div>
-        </main>
-
-        <!-- Bagian Informasi Penanda Tangan -->
-        <div class="bg-gray-50 p-6 md:p-8 border-t border-gray-200">
-             <h2 class="text-lg font-bold text-teal-700 mb-4">Informasi Penanda Tangan</h2>
-             <div class="space-y-4">
-                <div class="flex flex-row">
-                    <p class="w-1/3 text-gray-500 font-medium">Nama</p>
-                    <p class="w-2/3 text-gray-800 font-semibold">dr. Riana</p>
-                </div>
-                <hr>
-                <div class="flex flex-row">
-                    <p class="w-1/3 text-gray-500 font-medium">No. Identitas (SIP)</p>
-                    <p class="w-2/3 text-gray-800">DPMPTSP/331804.59181/DU/03/449/034/III/2025</p>
-                </div>
-             </div>
+            
+            <!-- Footer -->
+            <footer class="text-center p-4 bg-gray-100 text-xs text-gray-500">
+                <p>&copy; 2025 Sistem Verifikasi Dokumen. All rights reserved.</p>
+            </footer>
         </div>
-        
-        <!-- Footer -->
-        <footer class="text-center p-4 bg-gray-100 text-xs text-gray-500">
-            <p>&copy; 2025 Sistem Verifikasi Dokumen. All rights reserved.</p>
-        </footer>
 
+        <!-- Tampilan Penampil Gambar (Awalnya Tersembunyi) -->
+        <div id="image-viewer" class="hidden relative fade-in">
+            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgRYauslWO-cbHVzRSK3zxwt2Xedi9rBC2cRNBxhi6jAdJ6foOaeH92GU4P9KdH5moYopOjKAKqD0o02_ELe3WkQP6QF3pbpvr8yrYu51tL22F0gvQ9kjpnDAh4vUZdhmsA0KZGyptKZhHfz5hpPdHaB0U_Dl37UA_-Vj_Ag4Ictu-GyMgcxBluHhAAe3o/s1600/IMG_20250728_191050.jpg" 
+                 alt="Gambar Dokumen" class="w-full h-auto"
+                 onerror="this.onerror=null;this.src='https://placehold.co/1024x768/eeeeee/333333?text=Gambar+Tidak+Ditemukan';">
+            
+            <!-- Tombol Tutup (X) -->
+            <button id="close-viewer-btn" class="absolute top-4 right-4 bg-black bg-opacity-50 text-white rounded-full p-1.5 hover:bg-opacity-75 transition-opacity">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+            </button>
+        </div>
     </div>
+
+    <script>
+        // Mendapatkan elemen-elemen yang diperlukan
+        const detailsView = document.getElementById('document-details');
+        const viewerView = document.getElementById('image-viewer');
+        const viewBtn = document.getElementById('view-document-btn');
+        const closeBtn = document.getElementById('close-viewer-btn');
+
+        // Menambahkan event listener ke tombol "Lihat Dokumen"
+        viewBtn.addEventListener('click', () => {
+            detailsView.classList.add('hidden'); // Sembunyikan detail
+            viewerView.classList.remove('hidden'); // Tampilkan gambar
+        });
+
+        // Menambahkan event listener ke tombol "Tutup" (X)
+        closeBtn.addEventListener('click', () => {
+            viewerView.classList.add('hidden'); // Sembunyikan gambar
+            detailsView.classList.remove('hidden'); // Tampilkan kembali detail
+        });
+    </script>
 
 </body>
 </html>
