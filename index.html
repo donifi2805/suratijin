@@ -2,16 +2,10 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    
-    <!-- 
-      META VIEWPORT TETAP:
-      - Mengatur lebar viewport ke 1024px untuk memaksa tampilan desktop.
-    -->
     <meta name="viewport" content="width=1024">
-
     <title>Detail Dokumen Elektronik</title>
     
-    <!-- Ikon Aplikasi (PWA & Favicon) -->
+    <!-- Ikon Aplikasi -->
     <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAA/1BMVEX////4/v/T6fdntOUAktwAjd4AjeI6oOSQw+7R5vjr9vxQqeEAhdsAlOV6wfCr2Pe03Pmo0vaAuu0AgNwAetYyktrc6/m52/QAmurz+f6pzO4AdNcAi+Z4wvgAc9uz0/KIyfdyreaW0M1Yvbi+3tj/9/PZ5N+YzMRzxcOLztIyjttDoN/P6ekApaP5/Px3xtEAZ8pfn+EAfdTI5ejk8Oml3N2RvOwAadXG5doArXwrspXw9v2v3eoGrpVDgt9Yleiq1e13wOEAo5Jrs9eFud9Km85smOMAgcgAcMRTlNxbmdUAW85+r+qtxO/I1vGetuV9oeAAYMoAT8hlitgATdLMfTOeAAABUklEQVR4AYzPg5oDMQBF4bO2d1OubdQ2U7fv/yybZGr/M+H9Ipa3wgyra+sbG5ubW9s7jNvd2z84PDo+Od06O78QjLBt2o+xOJwbLhtDDt2XDDm9uqbvyH3DiNurHbpWrXV39w+PT88vrw7gzaVr7X0T+Pi8/4Cvr93Xb0D8/GKIvxPA8wV4deVD8QcEmnN/RYdAMBT2wgNKJOBHe39HiXq+VBaLdVcST6Dtn6IkU2pl+lMty+yiJOJof9so2TX0fYBcFiV/ZYV+lNstugpDYXfb0/MIhijahra9KKGIn1uMchHNlUfzu8wap6xEYOf35xpFyCrazpUfrRYIuFyB7vvqMoJRcmE4Glcup8BoNrBEmr9YGgEseWuhVpMJZ9UskYkvk7Vq9P0G4ldSp7WWzNfzslVnwCGrkVYVRbSbMpDfYVgj0JBVZnDIToDZBP8jEQAAns0rz6moqnUAAAAASUVORK5CYII=">
     <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAA/1BMVEX////4/v/T6fdntOUAktwAjd4AjeI6oOSQw+7R5vjr9vxQqeEAhdsAlOV6wfCr2Pe03Pmo0vaAuu0AgNwAetYyktrc6/m52/QAmurz+f6pzO4AdNcAi+Z4wvgAc9uz0/KIyfdyreaW0M1Yvbi+3tj/9/PZ5N+YzMRzxcOLztIyjttDoN/P6ekApaP5/Px3xtEAZ8pfn+EAfdTI5ejk8Oml3N2RvOwAadXG5doArXwrspXw9v2v3eoGrpVDgt9Yleiq1e13wOEAo5Jrs9eFud9Km85smOMAgcgAcMRTlNxbmdUAW85+r+qtxO/I1vGetuV9oeAAYMoAT8hlitgATdLMfTOeAAABUklEQVR4AYzPg5oDMQBF4bO2d1OubdQ2U7fv/yybZGr/M+H9Ipa3wgyra+sbG5ubW9s7jNvd2z84PDo+Od06O78QjLBt2o+xOJwbLhtDDt2XDDm9uqbvyH3DiNurHbpWrXV39w+PT88vrw7gzaVr7X0T+Pi8/4Cvr93Xb0D8/GKIvxPA8wV4deVD8QcEmnN/RYdAMBT2wgNKJOBHe39HiXq+VBaLdVcST6Dtn6IkU2pl+lMty+yiJOJof9so2TX0fYBcFiV/ZYV+lNstugpDYXfb0/MIhijahra9KKGIn1uMchHNlUfzu8wap6xEYOf35xpFyCrazpUfrRYIuFyB7vvqMoJRcmE4Glcup8BoNrBEmr9YGgEseWuhVpMJZ9UskYkvk7Vq9P0G4ldSp7WWzNfzslVnwCGrkVYVRbSbMpDfYVgj0JBVZnDIToDZBP8jEQAAns0rz6moqnUAAAAASUVORK5CYII=">
     <meta name="application-name" content="Profaskes">
@@ -29,155 +23,182 @@
             from { opacity: 0; transform: translateY(-10px); }
             to { opacity: 1; transform: translateY(0); }
         }
+        .fade-out { animation: fadeOut 0.5s ease-in-out forwards; }
+        @keyframes fadeOut {
+            from { opacity: 1; }
+            to { opacity: 0; }
+        }
     </style>
 </head>
-<body class="bg-gray-100 p-4 sm:p-6 lg:p-8 flex flex-col items-center">
+<body class="bg-gray-100 flex items-center justify-center">
 
-    <!-- Bagian Logo -->
-    <div class="mb-6">
-        <img src="https://profaskes.id/images/logo.webp" alt="Logo Profaskes" class="h-12 mx-auto"
-             onerror="this.onerror=null;this.src='https://placehold.co/200x50/eeeeee/333333?text=Logo';">
+    <!-- Layar Pemuatan -->
+    <div id="loading-screen" class="fixed inset-0 bg-gray-100 flex flex-col justify-center items-center z-50 p-4">
+        <img src="https://profaskes.id/images/logo.webp" alt="Logo Profaskes" class="h-16 mb-8" onerror="this.onerror=null;this.src='https://placehold.co/200x64/eeeeee/333333?text=Logo';">
+        <div class="w-full max-w-md bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-lg font-bold text-center text-gray-700 mb-4">Memverifikasi Dokumen...</h2>
+            <ul class="space-y-3">
+                <li id="step1" class="flex items-center text-gray-500 transition-all duration-300">
+                    <div class="w-6 h-6 mr-3 flex items-center justify-center">
+                        <svg class="spinner animate-spin h-5 w-5 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        <svg class="checkmark hidden h-6 w-6 text-teal-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                    </div>
+                    <span>Meng-scan data ProFaskes</span>
+                </li>
+                <li id="step2" class="flex items-center text-gray-500 transition-all duration-300 opacity-50">
+                     <div class="w-6 h-6 mr-3 flex items-center justify-center">
+                        <svg class="spinner hidden animate-spin h-5 w-5 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        <svg class="checkmark hidden h-6 w-6 text-teal-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                    </div>
+                    <span>Validasi SIP Tenaga medis KKi</span>
+                </li>
+                <li id="step3" class="flex items-center text-gray-500 transition-all duration-300 opacity-50">
+                     <div class="w-6 h-6 mr-3 flex items-center justify-center">
+                        <svg class="spinner hidden animate-spin h-5 w-5 text-teal-500" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle><path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path></svg>
+                        <svg class="checkmark hidden h-6 w-6 text-teal-500" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                    </div>
+                    <span>Mengecek data klinik pratama asrina</span>
+                </li>
+            </ul>
+        </div>
     </div>
 
-    <!-- Kontainer Utama Kartu -->
-    <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg overflow-hidden">
-        
-        <!-- Tampilan Detail Dokumen -->
-        <div id="document-details" class="fade-in">
-            <!-- Header (Padding p-3, Logo h-40) -->
-            <header class="bg-teal-600 text-white p-3">
-                <div class="flex justify-between items-center">
-                    <!-- Sisi Kiri: Ikon & Judul -->
-                    <div class="flex items-center space-x-4">
-                        <div>
-                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                        </div>
-                        <div>
-                            <h1 class="text-2xl font-bold">Dokumen Terverifikasi</h1>
-                            <p class="text-sm text-teal-100">Detail Tanda Tangan Elektronik</p>
-                        </div>
-                    </div>
-                    <!-- Sisi Kanan: Logo Baru (Ukuran tetap besar) -->
-                    <div>
-                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWaiNWrP8YQAZeLoHz4ih_1uY49hKf6fkPiIvO53uVD8Oj4HG99FXMAVXJ8hgug8tfLx7V5JGIopZ6DI_8XCtQNitZT5EipOcXXfMQoSssjefjAb8v3GqZTQeRx-Bq5wQn87N3v5gMPoGIhJJC8ndE8IlqntPfIcw8dlXeBTZYHgKk61poIJAJF3K6ZTc/s1600/unnamed__1_-removebg-preview.png" 
-                             alt="Logo Verifikasi" class="h-40"
-                             onerror="this.onerror=null;this.src='https://placehold.co/160x160/eeeeee/333333?text=Logo';">
-                    </div>
-                </div>
-            </header>
-
-            <!-- Konten Utama -->
-            <main class="p-6 md:p-8">
-                <div class="space-y-5">
-                    <div class="flex flex-row items-center">
-                        <p class="w-1/3 text-gray-500 font-medium">Jenis Dokumen</p>
-                        <p class="w-2/3 text-gray-800 font-semibold">Surat Keterangan Dokter</p>
-                    </div>
-                    <hr>
-                    <div class="flex flex-row items-center">
-                        <p class="w-1/3 text-gray-500 font-medium">ID Dokumen</p>
-                        <p class="w-2/3 text-gray-800 font-mono text-sm break-all">KC-ne8g3-kfnB7hevc9oH5dCja42gf7H</p>
-                    </div>
-                    <hr>
-                    <!-- Baris dengan Tombol "Lihat Dokumen" -->
-                    <div class="flex flex-row items-center">
-                        <p class="w-1/3 text-gray-500 font-medium">No. Surat</p>
-                        <div class="w-2/3 flex justify-between items-center">
-                            <p class="text-gray-800">158/SKD/07/2025</p>
-                            <button id="view-document-btn" class="bg-teal-100 text-teal-800 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center space-x-2 hover:bg-teal-200 transition-colors">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                                </svg>
-                                <span>Lihat Dokumen</span>
-                            </button>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="flex flex-row items-center">
-                        <p class="w-1/3 text-gray-500 font-medium">Tanggal Surat</p>
-                        <p class="w-2/3 text-gray-800">29 Juli 2025</p>
-                    </div>
-                    <hr>
-                    <div class="flex flex-row items-center">
-                        <p class="w-1/3 text-gray-500 font-medium">Dibuat Di</p>
-                        <div class="w-2/3 text-gray-800">
-                            <p class="font-semibold">KLINIK PRATAMA ASRINA</p>
-                            <p class="text-sm text-gray-600">Jl. Kol. Sunandar No.33, Rendole Indah, Muktiharjo, Kec. Margorejo, Kabupaten Pati, Jawa Tengah 59163</p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="flex flex-row items-center">
-                        <p class="w-1/3 text-gray-500 font-medium">Dibuat Pada</p>
-                        <p class="w-2/3 text-gray-800">29-07-2025 09:35:01</p>
-                    </div>
-                </div>
-            </main>
-
-            <!-- Info Penanda Tangan -->
-            <div class="bg-gray-50 p-6 md:p-8 border-t border-gray-200">
-                 <h2 class="text-lg font-bold text-teal-700 mb-4">Informasi Penanda Tangan</h2>
-                 <div class="space-y-4">
-                    <div class="flex flex-row items-center">
-                        <p class="w-1/3 text-gray-500 font-medium">Nama</p>
-                        <p class="w-2/3 text-gray-800 font-semibold">DR. Mustofa adi</p>
-                    </div>
-                    <hr>
-                    <div class="flex flex-row items-center">
-                        <p class="w-1/3 text-gray-500 font-medium">No. Identitas (SIP)</p>
-                        <p class="w-2/3 text-gray-800">SIP.DPMPTSP/957244.29561/DU/077/059/164/III/2025</p>
-                    </div>
-                 </div>
-            </div>
-            
-            <!-- Footer dengan Logo KKI -->
-            <footer class="p-4 bg-gray-100">
-                <div class="flex justify-between items-center">
-                    <p class="text-xs text-gray-500">&copy; 2025 Sistem Verifikasi Dokumen.</p>
-                    <div class="flex items-center space-x-2">
-                         <p class="text-xs text-gray-600 font-medium">
-                            Terferifikasi Konsil Kesehatan indonesia kki.go.id
-                        </p>
-                        <img src="https://kki.go.id/assets/img/Logo-kki-Full.png" alt="Logo KKI" class="h-8"
-                             onerror="this.onerror=null;this.src='https://placehold.co/100x32/eeeeee/333333?text=KKI';">
-                    </div>
-                </div>
-            </footer>
+    <!-- Konten Utama (Awalnya Tersembunyi) -->
+    <div id="main-content" class="hidden w-full p-4 sm:p-6 lg:p-8 flex flex-col items-center">
+        <div class="mb-6">
+            <img src="https://profaskes.id/images/logo.webp" alt="Logo Profaskes" class="h-12 mx-auto"
+                 onerror="this.onerror=null;this.src='https://placehold.co/200x50/eeeeee/333333?text=Logo';">
         </div>
 
-        <!-- Tampilan Penampil Gambar (Awalnya Tersembunyi) -->
-        <div id="image-viewer" class="hidden relative fade-in">
-            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFi7z7GYtIk87LBXY6dtKDcQTKv2dl49aF27fI2PsMQMN1zN9nwKfTuWvBsSRBjBg6fdqDXL-iWmqn10RdSIjBcj-YTYzRD_JkAJTcVJ_VNGWx_c4cmLSxfHrY39MOXUS_I81VJmtSGcYYUuelWjrFK9o0gOeVp3X2qawv3BWgwqCSUCsvKCblH9GFsm8/s1600/Doc.jpg" 
-                 alt="Gambar Dokumen" class="w-full h-auto"
-                 onerror="this.onerror=null;this.src='https://placehold.co/1024x768/eeeeee/333333?text=Gambar+Tidak+Ditemukan';">
-            
-            <!-- Tombol Tutup (X) -->
-            <button id="close-viewer-btn" class="absolute top-4 right-4 bg-black bg-opacity-50 text-white rounded-full p-1.5 hover:bg-opacity-75 transition-opacity">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
-                </svg>
-            </button>
+        <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg overflow-hidden">
+            <div id="document-details" class="fade-in">
+                <header class="bg-teal-600 text-white p-3">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center space-x-4">
+                            <div>
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" /></svg>
+                            </div>
+                            <div>
+                                <h1 class="text-2xl font-bold">Dokumen Terverifikasi</h1>
+                                <p class="text-sm text-teal-100">Detail Tanda Tangan Elektronik</p>
+                            </div>
+                        </div>
+                        <div>
+                            <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWaiNWrP8YQAZeLoHz4ih_1uY49hKf6fkPiIvO53uVD8Oj4HG99FXMAVXJ8hgug8tfLx7V5JGIopZ6DI_8XCtQNitZT5EipOcXXfMQoSssjefjAb8v3GqZTQeRx-Bq5wQn87N3v5gMPoGIhJJC8ndE8IlqntPfIcw8dlXeBTZYHgKk61poIJAJF3K6ZTc/s1600/unnamed__1_-removebg-preview.png" alt="Logo Verifikasi" class="h-40" onerror="this.onerror=null;this.src='https://placehold.co/160x160/eeeeee/333333?text=Logo';">
+                        </div>
+                    </div>
+                </header>
+                <main class="p-6 md:p-8">
+                    <div class="space-y-5">
+                        <div class="flex flex-row items-center"><p class="w-1/3 text-gray-500 font-medium">Jenis Dokumen</p><p class="w-2/3 text-gray-800 font-semibold">Surat Keterangan Dokter</p></div><hr>
+                        <div class="flex flex-row items-center"><p class="w-1/3 text-gray-500 font-medium">ID Dokumen</p><p class="w-2/3 text-gray-800 font-mono text-sm break-all">KC-ne8g3-kfnB7hevc9oH5dCja42gf7H</p></div><hr>
+                        <div class="flex flex-row items-center">
+                            <p class="w-1/3 text-gray-500 font-medium">No. Surat</p>
+                            <div class="w-2/3 flex justify-between items-center">
+                                <p class="text-gray-800">158/SKD/07/2025</p>
+                                <button id="view-document-btn" class="bg-teal-100 text-teal-800 text-xs font-semibold px-3 py-1.5 rounded-full flex items-center space-x-2 hover:bg-teal-200 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+                                    <span>Lihat Dokumen</span>
+                                </button>
+                            </div>
+                        </div><hr>
+                        <div class="flex flex-row items-center"><p class="w-1/3 text-gray-500 font-medium">Tanggal Surat</p><p class="w-2/3 text-gray-800">29 Juli 2025</p></div><hr>
+                        <div class="flex flex-row items-center">
+                            <p class="w-1/3 text-gray-500 font-medium">Dibuat Di</p>
+                            <div class="w-2/3 text-gray-800">
+                                <p class="font-semibold">KLINIK PRATAMA ASRINA</p>
+                                <p class="text-sm text-gray-600">Jl. Kol. Sunandar No.33, Rendole Indah, Muktiharjo, Kec. Margorejo, Kabupaten Pati, Jawa Tengah 59163</p>
+                            </div>
+                        </div><hr>
+                        <div class="flex flex-row items-center"><p class="w-1/3 text-gray-500 font-medium">Dibuat Pada</p><p class="w-2/3 text-gray-800">29-07-2025 09:35:01</p></div>
+                    </div>
+                </main>
+                <div class="bg-gray-50 p-6 md:p-8 border-t border-gray-200">
+                     <h2 class="text-lg font-bold text-teal-700 mb-4">Informasi Penanda Tangan</h2>
+                     <div class="space-y-4">
+                        <div class="flex flex-row items-center"><p class="w-1/3 text-gray-500 font-medium">Nama</p><p class="w-2/3 text-gray-800 font-semibold">DR. Mustofa adi</p></div><hr>
+                        <div class="flex flex-row items-center"><p class="w-1/3 text-gray-500 font-medium">No. Identitas (SIP)</p><p class="w-2/3 text-gray-800">SIP.DPMPTSP/957244.29561/DU/077/059/164/III/2025</p></div>
+                     </div>
+                </div>
+                <footer class="p-4 bg-gray-100">
+                    <div class="flex justify-between items-center">
+                        <p class="text-xs text-gray-500">&copy; 2025 Sistem Verifikasi Dokumen.</p>
+                        <div class="flex items-center space-x-2">
+                             <p class="text-xs text-gray-600 font-medium">Terferifikasi Konsil Kesehatan indonesia kki.go.id</p>
+                            <img src="https://kki.go.id/assets/img/Logo-kki-Full.png" alt="Logo KKI" class="h-8" onerror="this.onerror=null;this.src='https://placehold.co/100x32/eeeeee/333333?text=KKI';">
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <div id="image-viewer" class="hidden relative fade-in">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhFi7z7GYtIk87LBXY6dtKDcQTKv2dl49aF27fI2PsMQMN1zN9nwKfTuWvBsSRBjBg6fdqDXL-iWmqn10RdSIjBcj-YTYzRD_JkAJTcVJ_VNGWx_c4cmLSxfHrY39MOXUS_I81VJmtSGcYYUuelWjrFK9o0gOeVp3X2qawv3BWgwqCSUCsvKCblH9GFsm8/s1600/Doc.jpg" alt="Gambar Dokumen" class="w-full h-auto" onerror="this.onerror=null;this.src='https://placehold.co/1024x768/eeeeee/333333?text=Gambar+Tidak+Ditemukan';">
+                <button id="close-viewer-btn" class="absolute top-4 right-4 bg-black bg-opacity-50 text-white rounded-full p-1.5 hover:bg-opacity-75 transition-opacity">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+                </button>
+            </div>
         </div>
     </div>
 
     <script>
-        // Mendapatkan elemen-elemen yang diperlukan
+        // Logika untuk layar pemuatan
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            const mainContent = document.getElementById('main-content');
+
+            const steps = ['step1', 'step2', 'step3'];
+
+            function runStep(index) {
+                // Jika semua langkah selesai
+                if (index >= steps.length) {
+                    loadingScreen.classList.add('fade-out');
+                    setTimeout(() => {
+                        loadingScreen.style.display = 'none';
+                        mainContent.classList.remove('hidden');
+                        mainContent.classList.add('fade-in');
+                    }, 500); // Sesuaikan dengan durasi animasi fade-out
+                    return;
+                }
+
+                const stepElement = document.getElementById(steps[index]);
+                const spinner = stepElement.querySelector('.spinner');
+                const checkmark = stepElement.querySelector('.checkmark');
+                
+                // Aktifkan langkah saat ini
+                stepElement.classList.remove('opacity-50');
+                spinner.classList.remove('hidden');
+
+                const randomDelay = Math.random() * 1000 + 2000; // 2000ms hingga 3000ms
+
+                setTimeout(() => {
+                    // Selesaikan langkah saat ini
+                    spinner.classList.add('hidden');
+                    checkmark.classList.remove('hidden');
+                    stepElement.classList.remove('text-gray-500');
+                    stepElement.classList.add('text-gray-800', 'font-semibold');
+
+                    // Jalankan langkah berikutnya
+                    runStep(index + 1);
+                }, randomDelay);
+            }
+
+            // Mulai urutan pemuatan
+            runStep(0);
+        });
+
+        // Logika untuk penampil gambar
         const detailsView = document.getElementById('document-details');
         const viewerView = document.getElementById('image-viewer');
         const viewBtn = document.getElementById('view-document-btn');
         const closeBtn = document.getElementById('close-viewer-btn');
 
-        // Menambahkan event listener ke tombol "Lihat Dokumen"
         viewBtn.addEventListener('click', () => {
-            detailsView.classList.add('hidden'); // Sembunyikan detail
-            viewerView.classList.remove('hidden'); // Tampilkan gambar
+            detailsView.style.display = 'none';
+            viewerView.classList.remove('hidden');
         });
 
-        // Menambahkan event listener ke tombol "Tutup" (X)
         closeBtn.addEventListener('click', () => {
-            viewerView.classList.add('hidden'); // Sembunyikan gambar
-            detailsView.classList.remove('hidden'); // Tampilkan kembali detail
+            viewerView.classList.add('hidden');
+            detailsView.style.display = 'block';
         });
     </script>
 
