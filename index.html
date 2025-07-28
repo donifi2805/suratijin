@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     
     <!-- 
-      META VIEWPORT RESPONSIVE:
-      - Tag ini membuat halaman menjadi responsif terhadap lebar perangkat.
-      - 'width=device-width' mengatur lebar halaman agar sesuai dengan lebar layar.
-      - 'initial-scale=1.0' mengatur tingkat zoom awal menjadi 100%.
-      - Ini adalah kunci untuk mendapatkan tampilan yang pas di seluler seperti yang Anda inginkan.
+      META VIEWPORT TETAP:
+      - Mengatur lebar viewport ke 1024px untuk memaksa tampilan desktop.
+      - Ini akan membuat browser seluler menampilkan halaman dalam mode diperkecil,
+        dan pengguna dapat melakukan zoom secara manual.
     -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=1024">
 
-    <title>Detail Dokumen Elektronik</title>
+    <title>Detail Dokumen Elektronik (Versi Desktop)</title>
     <!-- Tailwind CSS untuk styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter -->
@@ -41,13 +40,15 @@
         }
     </style>
 </head>
-<body class="bg-gray-100 flex items-center justify-center p-4 sm:p-6 lg:p-8">
+<body class="bg-gray-100 p-4 sm:p-6 lg:p-8 flex flex-col items-center">
 
-    <!-- 
-      Tata letak ini menggunakan kelas responsif dari Tailwind CSS.
-      Di layar kecil (seluler), item akan tersusun vertikal (`flex-col`).
-      Di layar yang lebih lebar (`sm:`), item akan tersusun horizontal (`sm:flex-row`).
-    -->
+    <!-- Bagian Logo -->
+    <div class="mb-6">
+        <img src="https://profaskes.id/images/logo.webp" alt="Logo Profaskes" class="h-12 mx-auto"
+             onerror="this.onerror=null;this.src='https://placehold.co/200x50/eeeeee/333333?text=Logo';">
+    </div>
+
+    <!-- Kartu Dokumen -->
     <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg overflow-hidden fade-in">
         
         <!-- Bagian Header -->
@@ -71,37 +72,37 @@
         <main class="p-6 md:p-8">
             <div class="space-y-5">
                 <!-- Setiap item data adalah flex container untuk perataan -->
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">Jenis Dokumen</p>
-                    <p class="w-full sm:w-2/3 text-gray-800 font-semibold">Surat Keterangan Dokter</p>
+                <div class="flex flex-row">
+                    <p class="w-1/3 text-gray-500 font-medium">Jenis Dokumen</p>
+                    <p class="w-2/3 text-gray-800 font-semibold">Surat Keterangan Dokter</p>
                 </div>
                 <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">ID Dokumen</p>
-                    <p class="w-full sm:w-2/3 text-gray-800 font-mono text-sm break-all">KC-ne8g3-kfnB7hevc9oH5dCja42gf7H</p>
+                <div class="flex flex-row">
+                    <p class="w-1/3 text-gray-500 font-medium">ID Dokumen</p>
+                    <p class="w-2/3 text-gray-800 font-mono text-sm break-all">KC-ne8g3-kfnB7hevc9oH5dCja42gf7H</p>
                 </div>
                 <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">No. Surat</p>
-                    <p class="w-full sm:w-2/3 text-gray-800">158/SKD/07/2025</p>
+                <div class="flex flex-row">
+                    <p class="w-1/3 text-gray-500 font-medium">No. Surat</p>
+                    <p class="w-2/3 text-gray-800">158/SKD/07/2025</p>
                 </div>
                 <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">Tanggal Surat</p>
-                    <p class="w-full sm:w-2/3 text-gray-800">29 Juli 2025</p>
+                <div class="flex flex-row">
+                    <p class="w-1/3 text-gray-500 font-medium">Tanggal Surat</p>
+                    <p class="w-2/3 text-gray-800">29 Juli 2025</p>
                 </div>
                 <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">Dibuat Di</p>
-                    <div class="w-full sm:w-2/3 text-gray-800">
+                <div class="flex flex-row">
+                    <p class="w-1/3 text-gray-500 font-medium">Dibuat Di</p>
+                    <div class="w-2/3 text-gray-800">
                         <p class="font-semibold">KLINIK PRATAMA ASRINA</p>
                         <p class="text-sm text-gray-600">Jl. Kol. Sunandar No.33, Rendole Indah, Muktiharjo, Kec. Margorejo, Kabupaten Pati, Jawa Tengah 59163</p>
                     </div>
                 </div>
                 <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">Dibuat Pada</p>
-                    <p class="w-full sm:w-2/3 text-gray-800">29-07-2025 09:35:01</p>
+                <div class="flex flex-row">
+                    <p class="w-1/3 text-gray-500 font-medium">Dibuat Pada</p>
+                    <p class="w-2/3 text-gray-800">29-07-2025 09:35:01</p>
                 </div>
             </div>
         </main>
@@ -110,14 +111,14 @@
         <div class="bg-gray-50 p-6 md:p-8 border-t border-gray-200">
              <h2 class="text-lg font-bold text-teal-700 mb-4">Informasi Penanda Tangan</h2>
              <div class="space-y-4">
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">Nama</p>
-                    <p class="w-full sm:w-2/3 text-gray-800 font-semibold">dr. Riana</p>
+                <div class="flex flex-row">
+                    <p class="w-1/3 text-gray-500 font-medium">Nama</p>
+                    <p class="w-2/3 text-gray-800 font-semibold">dr. Riana</p>
                 </div>
                 <hr>
-                <div class="flex flex-col sm:flex-row">
-                    <p class="w-full sm:w-1/3 text-gray-500 font-medium mb-1 sm:mb-0">No. Identitas (SIP)</p>
-                    <p class="w-full sm:w-2/3 text-gray-800 break-all">DPMPTSP/331804.59181/DU/03/449/034/III/2025</p>
+                <div class="flex flex-row">
+                    <p class="w-1/3 text-gray-500 font-medium">No. Identitas (SIP)</p>
+                    <p class="w-2/3 text-gray-800">DPMPTSP/331804.59181/DU/03/449/034/III/2025</p>
                 </div>
              </div>
         </div>
