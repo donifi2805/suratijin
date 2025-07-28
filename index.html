@@ -2,11 +2,17 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
+    
+    <!-- 
+      MODIFIED VIEWPORT TAG:
+      - We set a fixed width (e.g., 1024px) to force the browser to render the page as if it were on a desktop.
+      - This makes the mobile browser zoom out initially to fit the entire page width.
+      - Users can then freely zoom in and out.
+      - This replaces the original responsive tag: <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    -->
+    <meta name="viewport" content="width=1024">
 
-    <!-- Viewport diatur agar halaman dimuat pada skala 100% -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>Detail Dokumen Elektronik (Tampilan Desktop)</title>
+    <title>Detail Dokumen Elektronik (Versi Desktop)</title>
     <!-- Tailwind CSS for styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter -->
@@ -17,8 +23,8 @@
         /* Apply Inter font to the body */
         body {
             font-family: 'Inter', sans-serif;
-            /* Memastikan scrolling horizontal dimungkinkan jika konten lebih lebar dari layar */
-            overflow-x: auto;
+            /* Ensure the background covers the entire viewport even when zoomed out */
+            min-height: 100vh;
         }
         /* Simple animation for the card */
         .fade-in {
@@ -36,99 +42,91 @@
         }
     </style>
 </head>
-<body class="bg-gray-100">
+<body class="bg-gray-100 flex items-center justify-center p-4 sm:p-6 lg:p-8">
 
     <!-- 
-      MAIN WRAPPER MODIFIED:
-      - Changed 'justify-start' to 'justify-center'.
-      - This class will now center its child element (the card) horizontally within the viewport.
-      - On mobile, this means you will see the middle of the card and can scroll left or right.
+      The content remains the same, but the viewport change will affect how it's displayed on mobile.
+      The layout will not collapse and will behave like the desktop version.
     -->
-    <div class="flex items-center justify-center min-h-screen p-4">
+    <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg overflow-hidden fade-in">
         
-        <!-- The card with a fixed width that does not change on mobile -->
-        <div class="w-[672px] max-w-none bg-white rounded-xl shadow-lg overflow-hidden fade-in">
-            
-            <!-- Header Section -->
-            <header class="bg-teal-600 text-white p-6">
-                <div class="flex items-center space-x-4">
-                    <!-- Icon -->
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
-                    </div>
-                    <!-- Title -->
-                    <div>
-                        <h1 class="text-2xl font-bold">Dokumen Terverifikasi</h1>
-                        <p class="text-sm text-teal-100">Detail Tanda Tangan Elektronik</p>
-                    </div>
+        <!-- Header Section -->
+        <header class="bg-teal-600 text-white p-6">
+            <div class="flex items-center space-x-4">
+                <!-- Icon -->
+                <div>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                    </svg>
                 </div>
-            </header>
-
-            <!-- 
-              Content Section
-              - Layout remains as 'flex-row' to force the desktop-style two-column layout.
-            -->
-            <main class="p-6 md:p-8">
-                <div class="space-y-5">
-                    <div class="flex flex-row items-start">
-                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">Jenis Dokumen</p>
-                        <p class="w-2/3 text-gray-800 font-semibold">Surat Keterangan Dokter</p>
-                    </div>
-                    <hr>
-                    <div class="flex flex-row items-start">
-                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">ID Dokumen</p>
-                        <p class="w-2/3 text-gray-800 font-mono text-sm break-all">KC-ne8g3-kfnB7hevc9oH5dCja42gf7H</p>
-                    </div>
-                    <hr>
-                    <div class="flex flex-row items-start">
-                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">No. Surat</p>
-                        <p class="w-2/3 text-gray-800">158/SKD/07/2025</p>
-                    </div>
-                    <hr>
-                    <div class="flex flex-row items-start">
-                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">Tanggal Surat</p>
-                        <p class="w-2/3 text-gray-800">29 Juli 2025</p>
-                    </div>
-                    <hr>
-                    <div class="flex flex-row items-start">
-                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">Dibuat Di</p>
-                        <div class="w-2/3 text-gray-800">
-                            <p class="font-semibold">KLINIK PRATAMA ARSINA</p>
-                            <p class="text-sm text-gray-600">Jl. Kol. Sunandar No.33, Rendole Indah, Muktiharjo, Kec. Margorejo, Kabupaten Pati, Jawa Tengah 59163</p>
-                        </div>
-                    </div>
-                    <hr>
-                    <div class="flex flex-row items-start">
-                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">Dibuat Pada</p>
-                        <p class="w-2/3 text-gray-800">29-07-2025 09:35:01</p>
-                    </div>
+                <!-- Title -->
+                <div>
+                    <h1 class="text-2xl font-bold">Dokumen Terverifikasi</h1>
+                    <p class="text-sm text-teal-100">Detail Tanda Tangan Elektronik</p>
                 </div>
-            </main>
-
-            <!-- Signer Information Section -->
-            <div class="bg-gray-50 p-6 md:p-8 border-t border-gray-200">
-                 <h2 class="text-lg font-bold text-teal-700 mb-4">Informasi Penanda Tangan</h2>
-                 <div class="space-y-4">
-                    <div class="flex flex-row items-start">
-                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">Nama</p>
-                        <p class="w-2/3 text-gray-800 font-semibold">dr. Riana</p>
-                    </div>
-                    <hr>
-                    <div class="flex flex-row items-start">
-                        <p class="w-1/3 flex-shrink-0 text-gray-500 font-medium">No. Identitas (SIP)</p>
-                        <p class="w-2/3 text-gray-800">DPMPTSP/331804.59181/DU/03/449/034/III/2025</p>
-                    </div>
-                 </div>
             </div>
-            
-            <!-- Footer -->
-            <footer class="text-center p-4 bg-white text-xs text-gray-500 border-t">
-                <p>&copy; 2025 Sistem Verifikasi Dokumen. All rights reserved.</p>
-            </footer>
+        </header>
 
+        <!-- Content Section -->
+        <main class="p-6 md:p-8">
+            <div class="space-y-5">
+                <!-- Each data item is a flex container for alignment -->
+                <div class="flex flex-col sm:flex-row">
+                    <p class="w-full sm:w-1/3 text-gray-500 font-medium">Jenis Dokumen</p>
+                    <p class="w-full sm:w-2/3 text-gray-800 font-semibold">Surat Keterangan Dokter</p>
+                </div>
+                <hr>
+                <div class="flex flex-col sm:flex-row">
+                    <p class="w-full sm:w-1/3 text-gray-500 font-medium">ID Dokumen</p>
+                    <p class="w-full sm:w-2/3 text-gray-800 font-mono text-sm break-all">KC-ne8g3-kfnB7hevc9oH5dCja42gf7H</p>
+                </div>
+                <hr>
+                <div class="flex flex-col sm:flex-row">
+                    <p class="w-full sm:w-1/3 text-gray-500 font-medium">No. Surat</p>
+                    <p class="w-full sm:w-2/3 text-gray-800">158/SKD/07/2025</p>
+                </div>
+                <hr>
+                <div class="flex flex-col sm:flex-row">
+                    <p class="w-full sm:w-1/3 text-gray-500 font-medium">Tanggal Surat</p>
+                    <p class="w-full sm:w-2/3 text-gray-800">29 Juli 2025</p>
+                </div>
+                <hr>
+                <div class="flex flex-col sm:flex-row">
+                    <p class="w-full sm:w-1/3 text-gray-500 font-medium">Dibuat Di</p>
+                    <div class="w-full sm:w-2/3 text-gray-800">
+                        <p class="font-semibold">KLINIK PRATAMA ASRINA</p>
+                        <p class="text-sm text-gray-600">Jl. Kol. Sunandar No.33, Rendole Indah, Muktiharjo, Kec. Margorejo, Kabupaten Pati, Jawa Tengah 59163</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="flex flex-col sm:flex-row">
+                    <p class="w-full sm:w-1/3 text-gray-500 font-medium">Dibuat Pada</p>
+                    <p class="w-full sm:w-2/3 text-gray-800">29-07-2025 09:35:01</p>
+                </div>
+            </div>
+        </main>
+
+        <!-- Signer Information Section -->
+        <div class="bg-gray-50 p-6 md:p-8 border-t border-gray-200">
+             <h2 class="text-lg font-bold text-teal-700 mb-4">Informasi Penanda Tangan</h2>
+             <div class="space-y-4">
+                <div class="flex flex-col sm:flex-row">
+                    <p class="w-full sm:w-1/3 text-gray-500 font-medium">Nama</p>
+                    <p class="w-full sm:w-2/3 text-gray-800 font-semibold">dr. Riana</p>
+                </div>
+                <hr>
+                <div class="flex flex-col sm:flex-row">
+                    <p class="w-full sm:w-1/3 text-gray-500 font-medium">No. Identitas (SIP)</p>
+                    <p class="w-full sm:w-2/3 text-gray-800">DPMPTSP/331804.59181/DU/03/449/034/III/2025</p>
+                </div>
+             </div>
         </div>
+        
+        <!-- Footer -->
+        <footer class="text-center p-4 bg-gray-100 text-xs text-gray-500">
+            <p>&copy; 2025 Sistem Verifikasi Dokumen. All rights reserved.</p>
+        </footer>
+
     </div>
 
 </body>
