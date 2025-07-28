@@ -6,12 +6,22 @@
     <!-- 
       META VIEWPORT TETAP:
       - Mengatur lebar viewport ke 1024px untuk memaksa tampilan desktop.
-      - Ini akan membuat browser seluler menampilkan halaman dalam mode diperkecil,
-        dan pengguna dapat melakukan zoom secara manual.
     -->
     <meta name="viewport" content="width=1024">
 
-    <title>Detail Dokumen Elektronik (Versi Desktop)</title>
+    <title>Detail Dokumen Elektronik</title>
+    
+    <!-- 
+      IKON APLIKASI (PWA & FAVICON):
+      - Ikon ini akan muncul di tab browser, bookmark, dan saat ditambahkan ke layar utama.
+      - `rel="icon"` adalah untuk favicon standar.
+      - `rel="apple-touch-icon"` adalah untuk perangkat iOS (iPhone/iPad).
+    -->
+    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAA/1BMVEX////4/v/T6fdntOUAktwAjd4AjeI6oOSQw+7R5vjr9vxQqeEAhdsAlOV6wfCr2Pe03Pmo0vaAuu0AgNwAetYyktrc6/m52/QAmurz+f6pzO4AdNcAi+Z4wvgAc9uz0/KIyfdyreaW0M1Yvbi+3tj/9/PZ5N+YzMRzxcOLztIyjttDoN/P6ekApaP5/Px3xtEAZ8pfn+EAfdTI5ejk8Oml3N2RvOwAadXG5doArXwrspXw9v2v3eoGrpVDgt9Yleiq1e13wOEAo5Jrs9eFud9Km85smOMAgcgAcMRTlNxbmdUAW85+r+qtxO/I1vGetuV9oeAAYMoAT8hlitgATdLMfTOeAAABUklEQVR4AYzPg5oDMQBF4bO2d1OubdQ2U7fv/yybZGr/M+H9Ipa3wgyra+sbG5ubW9s7jNvd2z84PDo+Od06O78QjLBt2o+xOJwbLhtDDt2XDDm9uqbvyH3DiNurHbpWrXV39w+PT88vrw7gzaVr7X0T+Pi8/4Cvr93Xb0D8/GKIvxPA8wV4deVD8QcEmnN/RYdAMBT2wgNKJOBHe39HiXq+VBaLdVcST6Dtn6IkU2pl+lMty+yiJOJof9so2TX0fYBcFiV/ZYV+lNstugpDYXfb0/MIhijahra9KKGIn1uMchHNlUfzu8wap6xEYOf35xpFyCrazpUfrRYIuFyB7vvqMoJRcmE4Glcup8BoNrBEmr9YGgEseWuhVpMJZ9UskYkvk7Vq9P0G4ldSp7WWzNfzslVnwCGrkVYVRbSbMpDfYVgj0JBVZnDIToDZBP8jEQAAns0rz6moqnUAAAAASUVORK5CYII=">
+    <link rel="apple-touch-icon" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAMAAABF0y+mAAAA/1BMVEX////4/v/T6fdntOUAktwAjd4AjeI6oOSQw+7R5vjr9vxQqeEAhdsAlOV6wfCr2Pe03Pmo0vaAuu0AgNwAetYyktrc6/m52/QAmurz+f6pzO4AdNcAi+Z4wvgAc9uz0/KIyfdyreaW0M1Yvbi+3tj/9/PZ5N+YzMRzxcOLztIyjttDoN/P6ekApaP5/Px3xtEAZ8pfn+EAfdTI5ejk8Oml3N2RvOwAadXG5doArXwrspXw9v2v3eoGrpVDgt9Yleiq1e13wOEAo5Jrs9eFud9Km85smOMAgcgAcMRTlNxbmdUAW85+r+qtxO/I1vGetuV9oeAAYMoAT8hlitgATdLMfTOeAAABUklEQVR4AYzPg5oDMQBF4bO2d1OubdQ2U7fv/yybZGr/M+H9Ipa3wgyra+sbG5ubW9s7jNvd2z84PDo+Od06O78QjLBt2o+xOJwbLhtDDt2XDDm9uqbvyH3DiNurHbpWrXV39w+PT88vrw7gzaVr7X0T+Pi8/4Cvr93Xb0D8/GKIvxPA8wV4deVD8QcEmnN/RYdAMBT2wgNKJOBHe39HiXq+VBaLdVcST6Dtn6IkU2pl+lMty+yiJOJof9so2TX0fYBcFiV/ZYV+lNstugpDYXfb0/MIhijahra9KKGIn1uMchHNlUfzu8wap6xEYOf35xpFyCrazpUfrRYIuFyB7vvqMoJRcmE4Glcup8BoNrBEmr9YGgEseWuhVpMJZ9UskYkvk7Vq9P0G4ldSp7WWzNfzslVnwCGrkVYVRbSbMpDfYVgj0JBVZnDIToDZBP8jEQAAns0rz6moqnUAAAAASUVORK5CYII=">
+    <meta name="application-name" content="Profaskes">
+    <meta name="apple-mobile-web-app-title" content="Profaskes">
+
     <!-- Tailwind CSS untuk styling -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Google Fonts: Inter -->
@@ -71,7 +81,6 @@
         <!-- Bagian Konten -->
         <main class="p-6 md:p-8">
             <div class="space-y-5">
-                <!-- Setiap item data adalah flex container untuk perataan -->
                 <div class="flex flex-row">
                     <p class="w-1/3 text-gray-500 font-medium">Jenis Dokumen</p>
                     <p class="w-2/3 text-gray-800 font-semibold">Surat Keterangan Dokter</p>
