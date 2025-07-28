@@ -72,7 +72,8 @@
 
         <div class="w-full max-w-2xl bg-white rounded-xl shadow-lg overflow-hidden">
             <div id="document-details" class="fade-in">
-                <header class="bg-teal-600 text-white p-3">
+                <!-- Header (Padding p-2, Logo h-40) -->
+                <header class="bg-teal-600 text-white p-2">
                     <div class="flex justify-between items-center">
                         <div class="flex items-center space-x-4">
                             <div>
@@ -165,14 +166,14 @@
                 
                 // Aktifkan langkah saat ini
                 stepElement.classList.remove('opacity-50');
-                spinner.classList.remove('hidden');
+                if (spinner) spinner.classList.remove('hidden');
 
                 const randomDelay = Math.random() * 1000 + 2000; // 2000ms hingga 3000ms
 
                 setTimeout(() => {
                     // Selesaikan langkah saat ini
-                    spinner.classList.add('hidden');
-                    checkmark.classList.remove('hidden');
+                    if (spinner) spinner.classList.add('hidden');
+                    if (checkmark) checkmark.classList.remove('hidden');
                     stepElement.classList.remove('text-gray-500');
                     stepElement.classList.add('text-gray-800', 'font-semibold');
 
@@ -191,15 +192,19 @@
         const viewBtn = document.getElementById('view-document-btn');
         const closeBtn = document.getElementById('close-viewer-btn');
 
-        viewBtn.addEventListener('click', () => {
-            detailsView.style.display = 'none';
-            viewerView.classList.remove('hidden');
-        });
+        if (viewBtn) {
+            viewBtn.addEventListener('click', () => {
+                if(detailsView) detailsView.style.display = 'none';
+                if(viewerView) viewerView.classList.remove('hidden');
+            });
+        }
 
-        closeBtn.addEventListener('click', () => {
-            viewerView.classList.add('hidden');
-            detailsView.style.display = 'block';
-        });
+        if (closeBtn) {
+            closeBtn.addEventListener('click', () => {
+                if(viewerView) viewerView.classList.add('hidden');
+                if(detailsView) detailsView.style.display = 'block';
+            });
+        }
     </script>
 
 </body>
