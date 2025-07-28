@@ -44,17 +44,26 @@
         
         <!-- Tampilan Detail Dokumen -->
         <div id="document-details" class="fade-in">
-            <!-- Header -->
-            <header class="bg-teal-600 text-white p-6">
-                <div class="flex items-center space-x-4">
-                    <div>
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
-                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                        </svg>
+            <!-- Header (Padding p-3, Logo h-40) -->
+            <header class="bg-teal-600 text-white p-3">
+                <div class="flex justify-between items-center">
+                    <!-- Sisi Kiri: Ikon & Judul -->
+                    <div class="flex items-center space-x-4">
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h1 class="text-2xl font-bold">Dokumen Terverifikasi</h1>
+                            <p class="text-sm text-teal-100">Detail Tanda Tangan Elektronik</p>
+                        </div>
                     </div>
+                    <!-- Sisi Kanan: Logo Baru (Ukuran tetap besar) -->
                     <div>
-                        <h1 class="text-2xl font-bold">Dokumen Terverifikasi</h1>
-                        <p class="text-sm text-teal-100">Detail Tanda Tangan Elektronik</p>
+                        <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhWaiNWrP8YQAZeLoHz4ih_1uY49hKf6fkPiIvO53uVD8Oj4HG99FXMAVXJ8hgug8tfLx7V5JGIopZ6DI_8XCtQNitZT5EipOcXXfMQoSssjefjAb8v3GqZTQeRx-Bq5wQn87N3v5gMPoGIhJJC8ndE8IlqntPfIcw8dlXeBTZYHgKk61poIJAJF3K6ZTc/s1600/unnamed__1_-removebg-preview.png" 
+                             alt="Logo Verifikasi" class="h-40"
+                             onerror="this.onerror=null;this.src='https://placehold.co/160x160/eeeeee/333333?text=Logo';">
                     </div>
                 </div>
             </header>
@@ -122,9 +131,18 @@
                  </div>
             </div>
             
-            <!-- Footer -->
-            <footer class="text-center p-4 bg-gray-100 text-xs text-gray-500">
-                <p>&copy; 2025 Sistem Verifikasi Dokumen. All rights reserved.</p>
+            <!-- Footer dengan Logo KKI -->
+            <footer class="p-4 bg-gray-100">
+                <div class="flex justify-between items-center">
+                    <p class="text-xs text-gray-500">&copy; 2025 Sistem Verifikasi Dokumen.</p>
+                    <div class="flex items-center space-x-2">
+                         <p class="text-xs text-gray-600 font-medium">
+                            Terferifikasi Konsil Kesehatan indonesia kki.go.id
+                        </p>
+                        <img src="https://kki.go.id/assets/img/Logo-kki-Full.png" alt="Logo KKI" class="h-8"
+                             onerror="this.onerror=null;this.src='https://placehold.co/100x32/eeeeee/333333?text=KKI';">
+                    </div>
+                </div>
             </footer>
         </div>
 
