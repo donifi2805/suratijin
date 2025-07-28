@@ -3,10 +3,7 @@
 <head>
     <meta charset="UTF-8">
 
-    <!-- 
-      VIEWPORT SET TO DEVICE-WIDTH:
-      This ensures the page loads at 100% zoom level without being scaled down.
-    -->
+    <!-- Viewport diatur agar halaman dimuat pada skala 100% -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Detail Dokumen Elektronik (Tampilan Desktop)</title>
@@ -20,7 +17,7 @@
         /* Apply Inter font to the body */
         body {
             font-family: 'Inter', sans-serif;
-            /* Allow horizontal scrolling */
+            /* Memastikan scrolling horizontal dimungkinkan jika konten lebih lebar dari layar */
             overflow-x: auto;
         }
         /* Simple animation for the card */
@@ -42,10 +39,14 @@
 <body class="bg-gray-100">
 
     <!-- 
-      The main container is centered vertically and has padding.
-      The width is fixed, which will cause horizontal overflow on small screens.
+      MAIN WRAPPER MODIFIED:
+      - Changed 'justify-start' to 'justify-center'.
+      - This class will now center its child element (the card) horizontally within the viewport.
+      - On mobile, this means you will see the middle of the card and can scroll left or right.
     -->
-    <div class="flex items-center justify-start min-h-screen p-4">
+    <div class="flex items-center justify-center min-h-screen p-4">
+        
+        <!-- The card with a fixed width that does not change on mobile -->
         <div class="w-[672px] max-w-none bg-white rounded-xl shadow-lg overflow-hidden fade-in">
             
             <!-- Header Section -->
@@ -67,8 +68,7 @@
 
             <!-- 
               Content Section
-              - 'flex-row' is now used without 'sm:' prefix to force side-by-side layout on all screen sizes.
-              - 'flex-shrink-0' is added to the label column to prevent it from shrinking.
+              - Layout remains as 'flex-row' to force the desktop-style two-column layout.
             -->
             <main class="p-6 md:p-8">
                 <div class="space-y-5">
