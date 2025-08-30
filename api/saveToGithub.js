@@ -34,7 +34,7 @@ module.exports = async (req, res) => {
     const contentEncoded = Buffer.from(fileContent).toString('base64');
 
     // GANTI DENGAN USERNAME DAN NAMA REPO ANDA
-    const REPO_OWNER = 'NAMA_PENGGUNA_GITHUB_ANDA'; 
+    const REPO_OWNER = 'donifi2805'; 
     const REPO_NAME = 'NAMA_REPOSITORI_PUBLIK_ANDA';
     
     // Lokasi penyimpanan file di dalam repo
