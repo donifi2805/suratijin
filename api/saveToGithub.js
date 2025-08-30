@@ -35,7 +35,7 @@ module.exports = async (req, res) => {
 
     // GANTI DENGAN USERNAME DAN NAMA REPO ANDA
     const REPO_OWNER = 'donifi2805'; 
-    const REPO_NAME = 'NAMA_REPOSITORI_PUBLIK_ANDA';
+    const REPO_NAME = 'suratijin';
     
     // Lokasi penyimpanan file di dalam repo
     const filePath = `verifications/${fileName}`;
