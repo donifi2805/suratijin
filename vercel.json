@@ -1,5 +1,19 @@
 {
+  "version": 2,
   "env": {
-    "GITHUB_TOKEN": "@github_token"
-  }
+    "GITHUB_TOKEN": "@github-token"
+  },
+  "builds": [
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/$1"
+    }
+  ]
 }
+
